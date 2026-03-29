@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Póster - III Edición La Copa Kali</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            height: auto;
+            min-height: 100%;
+            width: 100%;
+            overflow: hidden; /* No scroll */
+            touch-action: none;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #050505;
+            background-image: radial-gradient(circle at 50% 50%, #2b0000 0%, #050505 80%);
+            color: white;
+            margin: 0;
+            padding: 0;
+            height: 100dvh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /* Container that fits in the screen */
+        main {
+            width: 94vw;
+            height: 96dvh;
+            max-width: 48rem; /* 768px */
+            max-height: 64rem; /* 1024px */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            background: rgba(15, 15, 15, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(220, 38, 38, 0.3);
+            border-radius: 1.5rem;
+            box-shadow: 0 0 50px rgba(150, 0, 0, 0.5);
+            padding: clamp(0.5rem, 2vh, 2rem) clamp(1rem, 3vw, 2.5rem);
+        }
+        .title-font {
+            font-family: 'Bebas Neue', cursive;
+        }
+        /* Fluid typography considering both width and height */
+        .poster-title {
+            font-size: clamp(3rem, min(14vw, 10vh), 7.5rem);
+            line-height: 0.85;
+            margin-bottom: clamp(0.25rem, 1vh, 1rem);
+        }
+        .poster-subtitle {
+            font-size: clamp(0.8rem, min(3.5vw, 2.5vh), 1.25rem);
+        }
+        .poster-date {
+            font-size: clamp(1.2rem, min(5vw, 3.5vh), 2rem);
+        }
+        .contender-name {
+            font-size: clamp(1.2rem, min(5vw, 3vh), 2.25rem);
+            line-height: 1;
+            margin-bottom: 0.2rem;
+        }
+        .contender-title {
+            font-size: clamp(0.5rem, min(2vw, 1.2vh), 0.7rem);
+        }
+        .section-title {
+            font-size: clamp(1.1rem, min(4.5vw, 3vh), 1.75rem);
+        }
+        .rule-text {
+            font-size: clamp(0.65rem, min(2.5vw, 1.5vh), 0.95rem);
+        }
+        .footer-title {
+            font-size: clamp(1.2rem, min(5vw, 3vh), 2.5rem);
+        }
+        
+        .neon-text { text-shadow: 0 0 10px rgba(220, 38, 38, 0.8), 0 0 20px rgba(220, 38, 38, 0.5); }
+        .neon-border { box-shadow: 0 0 15px rgba(220, 38, 38, 0.3), inset 0 0 15px rgba(220, 38, 38, 0.2); }
+        .gold-glow { text-shadow: 0 0 10px rgba(250, 204, 21, 0.8), 0 0 20px rgba(250, 204, 21, 0.5); }
+        
+        .pulse-slow { animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: .95; transform: scale(1.02); }
+        }
+
+        /* Container specific adjustments */
+        .contenders-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: clamp(0.4rem, 1.5vh, 1rem);
+        }
+        
+        .rules-list {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(0.4rem, 1.5vh, 1rem);
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-red-900 selection:text-white relative">
+
+    <!-- Background decorative elements -->
+    <div class="fixed top-[-10%] left-[-10%] w-[40vw] h-[40vw] max-w-96 max-h-96 bg-red-900 rounded-full mix-blend-multiply filter blur-[80px] opacity-50 z-0 pointer-events-none"></div>
+    <div class="fixed bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] max-w-96 max-h-96 bg-purple-900 rounded-full mix-blend-multiply filter blur-[80px] opacity-40 z-0 pointer-events-none"></div>
+
+    <!-- Main Poster Container -->
+    <main class="relative z-10 font-bold">
+        
+        <!-- Header / Edition -->
+        <div class="text-center flex flex-col items-center">
+            <span class="inline-block py-0.5 px-3 border border-red-600 rounded-full text-red-500 tracking-widest uppercase text-[clamp(0.5rem,2vw,0.75rem)] mb-1.5 shadow-[0_0_10px_rgba(220,38,38,0.5)]">
+                Evento Exclusivo
+            </span>
+            <h3 class="text-gray-400 tracking-widest uppercase section-title">
+                III Edición
+            </h3>
+        </div>
+
+        <!-- Main Title -->
+        <div class="text-center w-full pulse-slow transform -skew-x-3">
+            <h1 class="title-font poster-title text-transparent bg-clip-text bg-gradient-to-b from-red-500 via-red-700 to-red-900 neon-text">
+                LA COPA<br>KALI
+            </h1>
+            <p class="poster-subtitle text-red-200 italic font-bold">
+                🍷 El Torneo Definitivo de Kalimotxo 🥤
+            </p>
+        </div>
+
+        <!-- Date Banner -->
+        <div class="w-full bg-gradient-to-r from-red-950 via-red-900 to-red-950 border-y border-red-600 py-1.5 sm:py-3 text-center transform -skew-y-1 neon-border">
+            <h2 class="poster-date title-font tracking-wider text-white transform skew-y-1 drop-shadow-md">
+                JUEVES, 2 DE ABRIL DE 2026
+            </h2>
+        </div>
+
+        <!-- The Gladiators Section -->
+        <div class="w-full">
+            <h3 class="text-center section-title title-font text-white mb-2 sm:mb-4 tracking-wider flex items-center justify-center gap-3">
+                <span class="h-px w-8 sm:w-16 bg-red-600"></span>
+                LOS CONTENDIENTES
+                <span class="h-px w-8 sm:w-16 bg-red-600"></span>
+            </h3>
+
+            <div class="contenders-grid">
+                <!-- Champion -->
+                <div class="relative bg-gradient-to-br from-yellow-900/40 to-black border border-yellow-500 rounded-lg sm:rounded-xl text-center flex flex-col justify-center items-center py-1.5 sm:py-3 transform hover:scale-105 transition shadow-[0_0_15px_rgba(234,179,8,0.3)]">
+                    <span class="absolute -top-3 sm:-top-5 text-xl sm:text-3xl drop-shadow-lg">👑</span>
+                    <h4 class="title-font contender-name text-yellow-400 gold-glow">YASSIR</h4>
+                    <p class="contender-title text-yellow-200 uppercase tracking-widest font-black">El Invicto • Bicampeón</p>
+                </div>
+                <!-- Challenger 1 -->
+                <div class="bg-black/50 border border-gray-700 rounded-lg sm:rounded-xl text-center flex flex-col justify-center items-center py-1.5 sm:py-3">
+                    <h4 class="title-font contender-name text-gray-200">MEDINA</h4>
+                    <p class="contender-title text-gray-400 uppercase tracking-widest font-bold">El Aspirante</p>
+                </div>
+                <!-- Challenger 2 -->
+                <div class="bg-black/50 border border-gray-700 rounded-lg sm:rounded-xl text-center flex flex-col justify-center items-center py-1.5 sm:py-3">
+                    <h4 class="title-font contender-name text-gray-200">ESCUDERO</h4>
+                    <p class="contender-title text-gray-400 uppercase tracking-widest font-bold">El Estratega</p>
+                </div>
+                <!-- Challenger 3 -->
+                <div class="bg-black/50 border border-gray-700 rounded-lg sm:rounded-xl text-center flex flex-col justify-center items-center py-1.5 sm:py-3">
+                    <h4 class="title-font contender-name text-gray-200">TARRAX</h4>
+                    <p class="contender-title text-gray-400 uppercase tracking-widest font-bold">La Promesa</p>
+                </div>
+            </div>
+            
+           
+        </div>
+
+        <!-- The Rules Section -->
+        <div class="mt-2 w-full bg-black/60 border border-red-900/50 rounded-lg sm:rounded-xl p-3 sm:p-5 shrink min-h-0 flex flex-col justify-center">
+            <h3 class="section-title font-black text-red-500 mb-2 sm:mb-3 uppercase tracking-widest border-b border-red-900/50 pb-1.5 flex justify-center items-center">
+                📜 Las Leyes de la Copa
+            </h3>
+            <ul class="rules-list text-gray-300">
+                <li class="flex items-start gap-2 sm:gap-3">
+                    <span class="text-red-500 font-bold rule-text">1.</span>
+                    <p class="rule-text leading-tight">El campeón vigente dicta un número del 1 al total de jugadores.</p>
+                </li>
+                <li class="flex items-start gap-2 sm:gap-3">
+                    <span class="text-red-500 font-bold rule-text">2.</span>
+                    <p class="rule-text leading-tight">Todos los participantes gritan un número de ese rango <strong>al mismo tiempo</strong>.</p>
+                </li>
+                <li class="flex items-start gap-2 sm:gap-3">
+                    <span class="text-red-500 font-bold rule-text">3.</span>
+                    <p class="rule-text leading-tight">Si tu número coincide con el del ganador... <span class="text-red-400 font-bold">PIERDES Y BEBES</span>.</p>
+                </li>
+                <li class="flex items-start gap-2 sm:gap-3">
+                    <span class="text-red-500 font-bold rule-text">4.</span>
+                    <p class="rule-text leading-tight">Eliminatoria súbita hasta quedar en un tenso y épico 1 VS 1.</p>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center w-full mt-1">
+            <p class="title-font footer-title text-red-600 neon-text mb-0.5 sm:mb-1">
+                ¿QUIÉN SOBREVIVIRÁ A LA SED?
+            </p>
+            <p class="text-[clamp(0.55rem,1.8vw,0.65rem)] text-gray-500 uppercase font-bold tracking-widest">
+                Bebe con responsabilidad. Solo los más fuertes quedan en pie.
+            </p>
+        </div>
+
+    </main>
+
+</body>
+</html>
